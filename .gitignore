@@ -31,3 +31,7 @@
 
 # "temporary" build files
 /target
+/build
+
+# local configure file
+.gradle
