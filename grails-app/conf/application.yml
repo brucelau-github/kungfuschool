@@ -99,7 +99,7 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    dialect: org.hibernate.dialect.MySQLInnoDBDialect
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     driverClassName: com.mysql.jdbc.Driver
     dbCreate: create
     url: jdbc:mysql://localhost:3306/kungfudb
