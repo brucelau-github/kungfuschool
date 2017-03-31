@@ -4,6 +4,7 @@ class Student {
 
     String studentNumber,firstName,lastName, email, mobileNumber
     Date birthDate,enrollDate
+    Address address
 
     static constraints = {
           studentNumber unique:true
