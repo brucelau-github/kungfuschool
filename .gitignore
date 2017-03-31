@@ -32,6 +32,8 @@
 # "temporary" build files
 /target
 /build
+/src/test/
 
 # local configure file
 .gradle
+.idea
