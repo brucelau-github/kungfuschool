@@ -6,6 +6,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class GuardianController {
 
+    def guardianService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -18,7 +20,7 @@ class GuardianController {
     }
 
     def create() {
-        respond new Guardian(params)
+        respond guardianService.createWithStuId(params.studentId)
     }
 
     @Transactional
