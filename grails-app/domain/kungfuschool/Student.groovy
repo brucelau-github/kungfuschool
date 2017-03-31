@@ -13,4 +13,13 @@ class Student {
           lastName blank:false
           birthDate max: new Date()
     }
+
+    static mapping = {
+
+    }
+
+    String toString() {
+
+      firstName+" "+lastName
+    }
 }
