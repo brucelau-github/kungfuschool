@@ -37,7 +37,7 @@ class GuardianController {
             return
         }
 
-        guardian.save flush:true
+        guardianService.save(guardian)
 
         request.withFormat {
             form multipartForm {
