@@ -1,9 +1,11 @@
 package kungfuschool
 
-class Class {
+class Product {
 
     String name
-    
+    Float price
+    Integer amount
     static constraints = {
+
     }
 }

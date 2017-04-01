@@ -5,6 +5,7 @@ class Student {
     String studentNumber,firstName,lastName, email, mobileNumber
     Date birthDate,enrollDate
     Address address
+    Rank rank
 
     static constraints = {
           studentNumber unique:true
