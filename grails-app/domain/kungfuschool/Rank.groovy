@@ -2,9 +2,12 @@ package kungfuschool
 
 class Rank {
 
-    Integer amount
-    String rank_name, belt_color, requirement_des
+    String rankName, beltColor, requirementDes
     static constraints = {
 
+    }
+
+    String toString() {
+	rankName
     }
 }

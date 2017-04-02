@@ -6,4 +6,8 @@ class Instructor {
 
     static constraints = {
     }
+
+    String toString() {
+	firstName +" "+lastName
+    }
 }

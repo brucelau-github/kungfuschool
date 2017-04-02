@@ -8,4 +8,8 @@ class Product {
     static constraints = {
 
     }
+
+    String toString() {
+	name
+    }
 }
