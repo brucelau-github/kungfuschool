@@ -1,9 +1,11 @@
 package kungfuschool
 
-class Class {
+class Enroll {
 
-    String name
-    
+    Classes classes 
+    Student student
+
     static constraints = {
+
     }
 }
