@@ -85,13 +85,13 @@ grails:
                 taglib: none
                 staticparts: none
     gorm:
-      default:
-        constraints:
-          '*':
-            nullable: true
+        default:
+            constraints:
+                '*':
+                    nullable: true
         mapping:
-          version: false
-          autoTimestamp: false
+            version: false
+            autoTimestamp: false
 
 endpoints:
     jmx:
