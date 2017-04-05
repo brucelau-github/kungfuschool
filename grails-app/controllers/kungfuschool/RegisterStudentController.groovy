@@ -1,18 +1,18 @@
 package kungfuschool
 
 class RegisterStudentController {
-	
+
 	def registerStudentService
 
 	def index(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
 		render(view:"index",  model:[studentList: Student.list(params), studentCount: Student.count()])
 	}
-	
+
 	def create() {
 		render(view: "create", model: [student: new Student(), address: new Address(), guardian: new Guardian(), guard: new Guard(), rankList: Rank.list()])
 	}
-	
+
 	def save() {
 		//get the beans on the page
 		def student = new Student(params.student)
@@ -39,4 +39,9 @@ class RegisterStudentController {
 
 	}
 
+        def show() {
+            def student = Student.get(params.int("id"))
+            def guardList = Guard.findAllByStudent(student)
+            render(view:"show", model:[student: student, guardList: guardList])
+        }
 }
