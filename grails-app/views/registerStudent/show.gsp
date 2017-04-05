@@ -20,27 +20,43 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-	    	<ul>
-		<fieldset class="embedded address">
-		<legend>Student</legend>
+	    <ol class="property-list">
 		<f:with bean="student">
-		 <li><f:display prefix="student." property="firstName"/></li>
-		 <li><f:display prefix="student." property="lastName"/></li>
-		 <li><f:display prefix="student." property="studentNumber"/></li>
-		 <li><f:display prefix="student." property="email"/></li>
-		 <li><f:display prefix="student." property="birthDate"/></li>
-		 <li><f:display prefix="student." property="mobileNumber"/></li>
-		 <li><f:display prefix="student." property="enrollDate"/></li>
+		<label>Student</label>
+		<hr/>
+		 <f:display prefix="student." property="firstName"/>
+		 <f:display prefix="student." property="lastName"/>
+		 <f:display prefix="student." property="studentNumber"/>
+		 <f:display prefix="student." property="email"/>
+		 <f:display prefix="student." property="birthDate"/>
+		 <f:display prefix="student." property="mobileNumber"/>
+		 <f:display prefix="student." property="enrollDate"/>
 		</f:with>
-		</fieldset>
 		<label>Address:</label>
 		<hr/>
-		<f:with bean="address">
+		<f:with bean="${student.address}">
 		 <f:display prefix="address." property="street"/>
 		 <f:display prefix="address." property="city"/>
 		 <f:display prefix="address." property="state"/>
 		</f:with>
-		</ul>
+		<label>Rank:</label>
+		<hr/>
+		<f:with bean="${student.rank}">
+		 <f:display prefix="rank." property="rankName"/>
+		 <f:display prefix="rank." property="beltColor"/>
+		 <f:display prefix="rank." property="requirementDes"/>
+		</f:with>
+		<label>Guardians:</label>
+                <hr/>
+                <g:each var="guard" in="${guardList}">
+                  <f:with bean="${guard.guardian}">
+                   <f:display property="firstName"/>
+                   <f:display property="lastName"/>
+                  </f:with>
+                  <f:display bean="${guard}" property="relation"/>
+                  <hr/>
+                </g:each>
+	    </ol>
             <g:form resource="${this.student}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.student}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
