@@ -14,6 +14,14 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+        default:
+            constraints:
+                '*':
+                    nullable: true
+        mapping:
+            version: false
+            autoTimestamp: false
+
 info:
     app:
         name: '@info.app.name@'
@@ -84,14 +92,6 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
-    gorm:
-        default:
-            constraints:
-                '*':
-                    nullable: true
-        mapping:
-            version: false
-            autoTimestamp: false
 
 endpoints:
     jmx:
