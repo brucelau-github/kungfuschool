@@ -9,5 +9,6 @@ class Guardian {
       email email:true
       firstName blank:false
       lastName blank:false
+      address nullable: true
     }
 }

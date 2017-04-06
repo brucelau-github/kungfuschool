@@ -110,16 +110,16 @@ dataSource:
     jmxExport: true
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     driverClassName: com.mysql.jdbc.Driver
-    dbCreate: create-drop
-    url: jdbc:mysql://10.1.0.10:3306/kungfudb
-    username: kungfudbuser
-    password: kungfu_dbuser
+    dbCreate: create
+    url: jdbc:mysql://localhost:3306/kungfudb
+    username: root
+    password:
 
 environments:
     development:
         dataSource:
-            dbCreate: create-drop
-            url: jdbc:mysql://10.1.0.10:3306/kungfudb
+            dbCreate: create
+            url: jdbc:mysql://localhost:3306/kungfudb
     test:
         dataSource:
             dbCreate: update
