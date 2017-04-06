@@ -32,10 +32,12 @@ class RegisterStudentController {
             		return
 		}
 
-		registerStudentService.save(address, student, guardian, guard, rank)
+		def stuId = registerStudentService.save(address, student, guardian, guard, rank)
+		def stu = Student.get(stuId)
+		def guardList = Guard.findAllByStudent(stu)
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'student.label', default: 'Student'), student.toString()])
-                render(view:"show", model:[student: student, guard: guard])
+		render(view:"show", model:[student: stu, guardList: guardList])
 
 	}
 

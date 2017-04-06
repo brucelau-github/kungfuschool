@@ -15,7 +15,7 @@ class RegisterStudentService {
 	guard.student = stu
 	guard.guardian = guardian
 	guard.save(flush:true)
-	return -1
+	return stu.id
     }
 
 }
