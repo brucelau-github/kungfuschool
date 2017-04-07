@@ -47,7 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
                     </li>
-                    <g:each var="c" in="${['address','classes','enroll','guardian','instructor','product','purchase','rank','rankhistory','registerStudent','session','student']}">
+                    <g:each var="c" in="${['address','classes','enroll','guardian','instructor','product','purchase','rank','rankHistory','registerStudent','session','student']}">
                         <li class="nav-item">
                         <g:link class="nav-link" controller="${c}">${c}</g:link>
                         </li>
