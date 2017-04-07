@@ -14,6 +14,21 @@ class BootStrap {
 //	new Student(firstName:"Bruce2", lastName:"Lau", email:"liu1ee@uwindsor.ca", mobileNumber:"2269879933", birthDate: Date.parse("yyyy-MM-dd","2017-01-19"), ,enrollDate: Date.parse("yyyy-MM-dd","2017-01-19"), studentNumber:"104522981", address:add, rank:rnk).save()
 //	new Student(firstName:"Bruce3", lastName:"Lau", email:"liu1ee@uwindsor.ca", mobileNumber:"2269879933", birthDate: Date.parse("yyyy-MM-dd","2017-01-19"), ,enrollDate: Date.parse("yyyy-MM-dd","2017-01-19"), studentNumber:"104522982", address:add, rank:rnk).save()
 //	std.save()
+	def adminRole = new Role(authority: 'ROLE_ADMIN').save()
+	def userRole = new Role(authority: 'ROLE_USER').save()
+
+	def testUser = new User(username: 'me', password: 'password').save()
+
+	UserRole.create testUser, adminRole
+
+	UserRole.withSession {
+	   it.flush()
+	   it.clear()
+	}
+
+	assert User.count() == 1
+	assert Role.count() == 2
+	assert UserRole.count() == 1
     }
     def destroy = {
     }

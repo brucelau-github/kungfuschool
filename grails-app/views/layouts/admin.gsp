@@ -59,9 +59,12 @@
                     <li><g:link uri="/">Back to site</g:link></li>
                 </ul>
 
-                <p class="nav navbar-text navbar-right">
-                    Logged in as ${"user login"} | <g:link controller="user" action="logout">logout</g:link>
-                </p>        
+		<p class="nav navbar-text navbar-right">
+		<sec:ifLoggedIn>
+		Logged in as <sec:username/>
+		</sec:ifLoggedIn>
+		Logged in as ${getPrincipal().username} | <g:link controller="user" action="logout">logout</g:link>
+		</p>        
         </div><!--/.nav-collapse -->
       </div>
     </nav>

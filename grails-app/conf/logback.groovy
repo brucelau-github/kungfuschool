@@ -34,5 +34,7 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
     logger("org.hibernate.SQL", DEBUG, ["STDOUT"], false)
     logger("org.hibernate.type.descriptor.sql.BasicBinder", TRACE, ["STDOUT"], false)
+    logger("grails.plugin.springsecurity", TRACE, ["STDOUT"], false)
+    logger("org.springframework.security", DEBUG, ["STDOUT"], false)
 }
 root(ERROR, ['STDOUT'])
