@@ -39,8 +39,28 @@
             </div>
         </div>
     </div>
+	<div class="container-fluid">
+        <div class="row">
+            <sec:ifLoggedIn>
+            <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
+                    </li>
+                    <g:each var="c" in="${['address','classes','enroll','guardian','instructor','product','purchase','rank','rankhistory','registerStudent','session','student']}">
+                        <li class="nav-item">
+                        <g:link class="nav-link" controller="${c}">${c}</g:link>
+                        </li>
+                    </g:each>
+                </ul>
+            </nav>
+            </sec:ifLoggedIn>
 
-    <g:layoutBody/>
+            <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+                <g:layoutBody/>
+            </main>
+        </div>
+    </div>
 
     <div class="footer" role="contentinfo"></div>
 
