@@ -177,6 +177,22 @@ img {
     background-color: #4D8618;
 }
 
+.nav .flex-column {
+	-webkit-box-orient: vertical !important;
+	-webkit-box-direction: normal !important;
+	-webkit-flex-direction: column !important;
+	-ms-flex-direction: column !important;
+	flex-direction: column !important;
+}
+
+.nav .nav-item {
+    width: 100%
+}
+
+.nav .nav-item a:hover {
+    background-color: #BFBF3F
+}
+
 /* CREATE/EDIT FORMS AND SHOW PAGES */
 
 fieldset,
@@ -446,7 +462,7 @@ th.desc a {
 }
 
 th:hover, tr:hover {
-    background: #79b94c;
+    background: #D3ACFA;
 }
 
 /* PAGINATION */
@@ -561,7 +577,7 @@ a.skip {
 }
 
 .grails-logo-container {
-    background:#79b94c no-repeat 50% 30%;
+    background: #e64759 no-repeat 50% 30%;
     margin-bottom: 20px;
     color: white;
     height:300px;
