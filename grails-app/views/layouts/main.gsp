@@ -30,9 +30,11 @@
                 </a>
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
+		<sec:ifLoggedIn>
+		<p class="nav navbar-text navbar-right">
+		  <g:link url="#"><sec:username/> - logout</g:link> 
+		</p>
+		</sec:ifLoggedIn>
             </div>
         </div>
     </div>
