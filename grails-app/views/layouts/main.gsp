@@ -31,11 +31,14 @@
                 </a>
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <sec:ifLoggedIn>
-                    <p class="nav navbar-text navbar-right">
-                      <g:link url="/logout"><sec:username/> - logout</g:link> 
-                    </p>
-                </sec:ifLoggedIn>
+				<p class="navbar-text navbar-right">
+					<sec:ifNotLoggedIn>
+						<g:link controller='login' action='auth'>Login</g:link>
+					</sec:ifNotLoggedIn>
+					<sec:ifLoggedIn>
+						<a href="#"><sec:username/> | </a><g:link url="/logout">logout</g:link> 
+					</sec:ifLoggedIn>
+				</p>
             </div>
         </div>
     </div>
